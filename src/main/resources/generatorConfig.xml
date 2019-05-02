@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--mysql 连接数据库jar 这里选择自己本地位置-->
+    <classPathEntry location="/Users/lihaiming/mysql-connector-java-5.1.44-bin.jar" />
+    <context id="testTables" targetRuntime="MyBatis3">
+        <!-- 生成的POJO实现java.io.Serializable接口 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+            <!-- 将数据库中表的字段描述信息添加到注释 -->
+            <property name="addRemarkComments" value="true"/>
+            <!-- 注释里不添加日期 -->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://119.23.77.187:3306/mynote?characterEncoding=utf8" userId="lihaiming"
+                        password="123321">
+        </jdbcConnection>
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+           NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- targetProject:生成PO类的位置 -->
+        <!-- 生成POJO对象，并将类放到com.note.mynote.pojo包下 -->
+        <javaModelGenerator targetPackage="com.note.mynote.pojo"
+                            targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置
+           如果maven工程只是单独的一个工程，targetProject="src/main/java"
+           若果maven工程是分模块的工程，targetProject="所属模块的名称"，例如：
+           targetProject="ecps-manager-mapper"，下同-->
+        <!-- 生成mapper xml文件，并放到resources下的mapper文件夹下 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <!-- 生成mapper xml对应dao接口，放到com.note.mynote.dao包下-->
+        <javaClientGenerator type="ANNOTATEDMAPPER"
+                             targetPackage="com.note.mynote.dao"
+                             targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        <!-- 指定数据库表 -->
+        <table schema="mynote" tableName="NOTE"></table>
+        <!--<table schema="kkbao" tableName="s_user"></table>-->
+        <!-- 是否只生成POJO对象 -->
+        <!--<property name="modelOnly" value="false"/>-->
+        <!-- 数据库中表名有时我们都会带个前缀，而实体又不想带前缀，这个配置可以把实体的前缀去掉 -->
+        <!--<domainObjectRenamingRule searchString="^Tbl" replaceString=""/>-->
+        <!--<table schema="" tableName="success_killed"></table>-->
+    </context>
+</generatorConfiguration>
+
+

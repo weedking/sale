@@ -1,0 +1,49 @@
+mybatis:
+  typeAliasesPackage: com.xdd.entity
+  mapperLocations: classpath:mapper/*.xml
+#  mapperLocations: classpath:src/main/resources
+spring:
+    profiles:
+      active: dev
+    datasource:
+      url: jdbc:mysql://119.23.77.187:3306/mynote?characterEncoding=utf8
+      username: lihaiming
+      password: 123321
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+      database: mysql
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      properties:
+          hibernate:
+              dialect:
+    thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      suffix: .html
+      encoding: UTF-8
+      mode: HTML5
+      servlet:
+        content-type: text/html
+
+    resources:
+      chain:
+        strategy:
+          content:
+            enabled: true
+            paths: /**
+
+    devtools:
+      restart:
+        enabled: false
+        additional-paths: src/main/java
+        additional-exclude: WEB-INF/**
+
+
+
+
+
+
