@@ -178,7 +178,7 @@ class Toggle extends React.Component {
                         //传递点中的ID
                         u => <div key={u.no} onClick={this.clickNoteTitle.bind(this,u.no,u.content)}>{u.no}:{u.title}</div>)
                     }
-                    {/*<h3>yyy</h3>*/}
+                    <h3>yyyoo</h3>
 
 
                 </div>
@@ -201,6 +201,7 @@ class Toggle extends React.Component {
                         <button className='saveNewNote' onClick={this.saveNewNote.bind(this)} >保存</button>
                         <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
                     </p>
+
                 </div>
             </div>
         );

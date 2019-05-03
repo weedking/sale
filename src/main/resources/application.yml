@@ -38,7 +38,7 @@ spring:
 
     devtools:
       restart:
-        enabled: false
+        enabled: true
         additional-paths: src/main/java
         additional-exclude: WEB-INF/**
 
