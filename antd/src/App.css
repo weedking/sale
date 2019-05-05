@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.container {
+  /*width: 1000px;*/
+  /*height: 700px;*/
+  margin: 0 auto;
+  position: relative;
+}
+.leftbox {
+  width: 200px;  /*左侧固定宽度值*/
+  height: 100%;
+  position: absolute;
+  background: gainsboro;
+}
+.rightbox {
+  height: 100%;
+  margin-left: 200px; /*边距值=左侧固定宽度值*/
+  position: relative;
+  background: gray;
+}
+
+.autotextarea {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  word-break: break-all;
+  /*在ie中解决断行问题(防止自动变为在一行显示，主要解决ie兼容问题，ie8中当设宽度为100%时，文本域类容超过一行时，当我们双击文本内容就会自动变为一行显示，所以只能用ie的专有断行属性“word-break或word-wrap”控制其断行)*/
+}
+
+
+body {
+  background-color: gray;
+  font-family: 'Oswald', 'Futura', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#mydiv{
+  color:yellow;
+  font-size:24px;
+}
+
+.nondot {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align:left;
+}
+
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
