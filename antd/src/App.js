@@ -5,7 +5,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import 'antd/dist/antd.css';
-// import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
 
 
 class Toggle extends React.Component {
@@ -218,7 +218,7 @@ class Toggle extends React.Component {
     }
 }
 
-class Sale extends React.Component {
+class App extends React.Component {
     render() {
         return (
 
@@ -227,8 +227,8 @@ class Sale extends React.Component {
             <div className="App">
 
                 <Toggle/>
-                {/*<Button type="primary">Button</Button>*/}
-                {/*<h3>djfldskjflk</h3>*/}
+                <Button type="primary">Button</Button>
+                <h3>djfldskjflk</h3>
             </div>
 
 
@@ -244,6 +244,6 @@ class Sale extends React.Component {
 //     document.getElementById('root')
 // );
 
-export default Sale;
+export default App;
 
 // export default Toggle;
