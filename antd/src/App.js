@@ -69,7 +69,7 @@ function App() {
                     </Layout>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
-                    Ant Design ©2018 Created by Ant UED
+                    销售易 ©2019 小李飞刀集团
                 </Footer>
             </Layout>
         </div>
