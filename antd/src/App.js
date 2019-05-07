@@ -5,12 +5,80 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import 'antd/dist/antd.css';
-import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Button, Table } from 'antd';
+// import { Layout, Menu, Breadcrumb, Icon, Table } from 'antd';
 
 const { SubMenu } = Menu;
-const {
-    Header, Content, Footer, Sider,
-} = Layout;
+const { Header, Content, Footer, Sider,} = Layout;
+
+const columns = [
+
+    {
+        title: '公司名称', width: 150, dataIndex: 'name', key: 'name', fixed: 'left',
+    },
+    {
+        title: '客户ID',  width: 150, dataIndex: 'id', key: 'id',
+    },
+    {
+        title: '客户来源',  width: 150, dataIndex: 'source', key: 'source',
+    },
+    {
+        title: '所在城市', sorter: true, width: 150, dataIndex: 'city', key: 'city',
+    },
+
+    {
+        title: '联系人', dataIndex: 'contacts', key: 'contacts', width: 150,
+    },
+    {
+        title: '职务', dataIndex: 'title', key: 'title', width: 150,
+    },
+    {
+        title: '联系电话', dataIndex: 'phone', key: 'phone', width: 150,
+    },
+    {
+        title: '提交时间', dataIndex: 'inputtime', key: 'inputtime', width: 150,
+    },
+    {
+        title: '需求产品', dataIndex: 'need', key: 'need', width: 150,
+    },
+    {
+        title: '邮箱', dataIndex: 'email', key: 'email', width: 150,
+    },
+    {
+        title: '公司地址', dataIndex: 'address', key: 'address', width: 150,
+    },
+    {
+        title: '公司网址', dataIndex: 'url', key: 'url', width: 150,
+    },
+    {
+        title: '备注', dataIndex: 'remark', key: 'remark', width: 150,
+    },
+    // { title: '11', dataIndex: 'address', key: '9' },
+    {
+        title: 'Action',
+        key: 'operation',
+        fixed: 'right',
+        width: 150,
+        // render: () => <a href="javascript:;">action</a>,
+    },
+];
+
+const data = [];
+for (let i = 0; i < 5; i++) {
+    data.push({
+        key: i,
+        name: `Edrward ${i}`,
+        age: 32,
+        phone: 13760271577,
+        address: `London Park no. ${i}`,
+    });
+}
+
+class CustomerList extends React.Component {
+    render() {
+        return (<Table columns={columns} dataSource={data} scroll={{x: 1500, y: 300}}/>);
+    }
+}
 
 class Display extends React.Component{
     render() {
@@ -21,7 +89,7 @@ class Display extends React.Component{
                     <Menu
                         theme="dark"
                         mode="horizontal"
-                        defaultSelectedKeys={['2']}
+                        defaultSelectedKeys={['1']}
                         style={{ lineHeight: '64px' }}
                     >
                         <Menu.Item key="1">用户信息</Menu.Item>
@@ -44,7 +112,7 @@ class Display extends React.Component{
                                 style={{ height: '100%' }}
                             >
                                 <SubMenu key="sub1" title={<span><Icon type="user" />用户信息</span>}>
-                                    <Menu.Item key="1">用户信息录入</Menu.Item>
+                                    <Menu.Item key="1">用户列表</Menu.Item>
                                     <Menu.Item key="2">option2</Menu.Item>
                                     <Menu.Item key="3">option3</Menu.Item>
                                     <Menu.Item key="4">option4</Menu.Item>
@@ -64,7 +132,8 @@ class Display extends React.Component{
                             </Menu>
                         </Sider>
                         <Content style={{ padding: '0 24px', minHeight: 280 }}>
-                            Content
+                            {/*Content已已i*/}
+                            <CustomerList/>
                         </Content>
                     </Layout>
                 </Content>
@@ -293,9 +362,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <Toggle/>
-                <Button type="primary">Button</Button>
-                <h3>djfldskjflk</h3>
+                {/*<Toggle/>*/}
+                {/*<Button type="primary">Button</Button>*/}
+                {/*<h3>djfldskjflk</h3>*/}
 
                 <Display/>
             </div>
