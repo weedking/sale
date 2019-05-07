@@ -115,7 +115,43 @@ class EditableTable extends React.Component {
             title: 'address',
             dataIndex: 'address',
             editable: true,
+        },{
+            title: 'address2',
+            dataIndex: 'address',
+            editable: true,
+        },{
+            title: 'address3',
+            dataIndex: 'address',
+            editable: true,
+        },{
+            title: 'address4',
+            dataIndex: 'address',
+            editable: true,
+        },{
+            title: 'address5',
+            dataIndex: 'address',
+            editable: true,
+        },{
+            title: 'address6',
+            dataIndex: 'address',
+            editable: true,
         }, {
+            title: 'address7',
+            dataIndex: 'address',
+            editable: true,
+        },{
+            title: 'address8',
+            dataIndex: 'address',
+            editable: true,
+        },{
+            title: 'address9',
+            dataIndex: 'address',
+            editable: true,
+        },{
+            title: 'address10',
+            dataIndex: 'address',
+            editable: true,
+        },{
             title: 'operation',
             dataIndex: 'operation',
             render: (text, record) => (
@@ -216,58 +252,63 @@ class EditableTable extends React.Component {
 
 
 
-const columns = [
-    {
-        title: '客户ID',  width: 150, dataIndex: 'id', key: 'id',
-    },
-
-    {
-        title: '公司名称', width: 150, dataIndex: 'name', key: 'name',
-    },
-
-    {
-        title: '客户来源',  width: 150, dataIndex: 'source', key: 'source',
-    },
-    {
-        title: '所在城市', sorter: true, width: 150, dataIndex: 'city', key: 'city',
-    },
-
-    {
-        title: '联系人', dataIndex: 'contacts', key: 'contacts', width: 150,
-    },
-    {
-        title: '职务', dataIndex: 'title', key: 'title', width: 150,
-    },
-    {
-        title: '联系电话', dataIndex: 'phone', key: 'phone', width: 150,
-    },
-    {
-        title: '提交时间', dataIndex: 'inputtime', key: 'inputtime', width: 150,
-    },
-    {
-        title: '需求产品', dataIndex: 'need', key: 'need', width: 150,
-    },
-    {
-        title: '邮箱', dataIndex: 'email', key: 'email', width: 150,
-    },
-    {
-        title: '公司地址', dataIndex: 'address', key: 'address', width: 150,
-    },
-    {
-        title: '公司网址', dataIndex: 'url', key: 'url', width: 150,
-    },
-    {
-        title: '备注', dataIndex: 'remark', key: 'remark', width: 150,
-    },
-    // { title: '11', dataIndex: 'address', key: '9' },
-    {
-        title: 'Action',
-        key: 'operation',
-        fixed: 'right',
-        width: 150,
-        // render: () => <a href="javascript:;">action</a>,
-    },
-];
+// const columns = [
+//     {
+//         title: '客户ID',  width: 150, dataIndex: 'id', key: 'id',
+//     },
+//
+//     {
+//         title: '公司名称', width: 150, dataIndex: 'name', key: 'name',
+//     },
+//
+//     {
+//         title: '客户来源',  width: 150, dataIndex: 'source', key: 'source',
+//     },
+//     {
+//         title: '所在城市', sorter: true, width: 150, dataIndex: 'city', key: 'city',
+//     },
+//
+//     {
+//         title: '联系人', dataIndex: 'contacts', key: 'contacts', width: 150,
+//     },
+//     {
+//         title: '职务', dataIndex: 'title', key: 'title', width: 150,
+//     },
+//     {
+//         title: '联系电话', dataIndex: 'phone', key: 'phone', width: 150,
+//     },
+//     {
+//         title: '提交时间', dataIndex: 'inputtime', key: 'inputtime', width: 150,
+//     },
+//     {
+//         title: '需求产品', dataIndex: 'need', key: 'need', width: 150,
+//     },
+//     {
+//         title: '邮箱', dataIndex: 'email', key: 'email', width: 150,
+//     },
+//     {
+//         title: '公司地址', dataIndex: 'address', key: 'address', width: 150,
+//     },
+//     {
+//         title: '公司网址', dataIndex: 'url', key: 'url', width: 150,
+//     },
+//     {
+//         title: '备注', dataIndex: 'remark', key: 'remark', width: 150,
+//     },
+//     // { title: '11', dataIndex: 'address', key: '9' },
+//     {
+//         title: 'Action',
+//         key: 'operation',
+//         fixed: 'right',
+//         width: 150,
+//         // render: () => <a href="javascript:;">修改</a>,
+//         render: () => (
+//             <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(record.key)}>
+//                 <a href="javascript:;">Delete</a>
+//             </Popconfirm>
+//         ) ,
+//     },
+// ];
 
 const data = [];
 for (let i = 0; i < 5; i++) {
@@ -281,8 +322,91 @@ for (let i = 0; i < 5; i++) {
 }
 
 class CustomerList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.columns = [
+            {
+                title: '客户ID',  width: 150, dataIndex: 'id', key: 'id',
+            },
+
+            {
+                title: '公司名称', width: 150, dataIndex: 'name', key: 'name',
+            },
+
+            {
+                title: '客户来源',  width: 150, dataIndex: 'source', key: 'source',
+            },
+            {
+                title: '所在城市', sorter: true, width: 150, dataIndex: 'city', key: 'city',
+            },
+
+            {
+                title: '联系人', dataIndex: 'contacts', key: 'contacts', width: 150,
+            },
+            {
+                title: '职务', dataIndex: 'title', key: 'title', width: 150,
+            },
+            {
+                title: '联系电话', dataIndex: 'phone', key: 'phone', width: 150,
+            },
+            {
+                title: '提交时间', dataIndex: 'inputtime', key: 'inputtime', width: 150,
+            },
+            {
+                title: '需求产品', dataIndex: 'need', key: 'need', width: 150,
+            },
+            {
+                title: '邮箱', dataIndex: 'email', key: 'email', width: 150,
+            },
+            {
+                title: '公司地址', dataIndex: 'address', key: 'address', width: 150,
+            },
+            {
+                title: '公司网址', dataIndex: 'url', key: 'url', width: 150,
+            },
+            {
+                title: '备注', dataIndex: 'remark', key: 'remark', width: 150,
+            },
+            {
+                title: 'operation',
+                dataIndex: 'operation',
+                render: (text, record) => (
+                    this.state.dataSource.length >= 1
+                        ? (
+                            <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(this.state.dataSource.key)}>
+                                <a href="javascript:;">Delete</a>
+                            </Popconfirm>
+                        ) : null
+                ),
+            }
+
+            // {
+            //     title: 'operation',
+            //     dataIndex: 'operation',
+            //     render: (text, record) => (
+            //         this.state.dataSource.length >= 1
+            //             ? (
+            //                 <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(record.key)}>
+            //                     <a href="javascript:;">Delete</a>
+            //                 </Popconfirm>
+            //             ) : null
+            //     ),
+            // }
+            ];
+
+        this.state = {
+            dataSource: data
+        };
+    }
+
+    handleDelete = (key) => {
+        const dataSource = [...this.state.dataSource];
+        this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
+    }
+
+
     render() {
-        return (<Table columns={columns} dataSource={data} scroll={{x: 1500, y: 300}}/>);
+        return (<Table columns={this.columns} dataSource={this.state.dataSource} scroll={{x: 1500, y: 300}}/>);
 
     }
 }
@@ -340,8 +464,8 @@ class Display extends React.Component{
                         </Sider>
                         <Content style={{ padding: '0 24px', minHeight: 280 }}>
                             {/*Content*/}
-                            {/*<CustomerList/>//列表样式之一*/}
-                            <EditableTable />//列表样式之二
+                            <CustomerList/>//列表样式之一
+                            {/*<EditableTable />//列表样式之二*/}
                         </Content>
                     </Layout>
                 </Content>
