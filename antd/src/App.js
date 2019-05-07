@@ -375,6 +375,7 @@ class CustomerList extends React.Component {
                         ? (
                             <Popconfirm title="Sure to delete?" onConfirm={() => this.handleDelete(this.state.dataSource.key)}>
                                 <a href="javascript:;">Delete</a>
+
                             </Popconfirm>
                         ) : null
                 ),
@@ -395,18 +396,35 @@ class CustomerList extends React.Component {
             ];
 
         this.state = {
-            dataSource: data
+            dataSource: data,
+            get1:'123'
         };
     }
 
     handleDelete = (key) => {
         const dataSource = [...this.state.dataSource];
-        this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
+        dataSource.splice(key, 1, {
+            key: 6,
+            name: `新的 `,
+            age: 32,
+            phone: 1376,
+            address: `地址`,
+
+        });
+
+        this.setState({ dataSource: dataSource.filter(item => item.key !== key),
+                get1:key});
+
+
     }
 
 
     render() {
-        return (<Table columns={this.columns} dataSource={this.state.dataSource} scroll={{x: 1500, y: 300}}/>);
+        return (
+            <Table columns={this.columns} dataSource={this.state.dataSource} scroll={{x: 1500, y: 300}}/>
+        // {this.state.get1}
+
+        );
 
     }
 }
